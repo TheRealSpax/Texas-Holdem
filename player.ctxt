@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=player
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ player\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=stapel\ pBuyIn
+comment1.target=player(deck,\ int)
+comment2.params=
+comment2.target=java.util.List\ getHand()
+comment3.params=times
+comment3.target=void\ pullCard(int)
+comment4.params=
+comment4.target=int\ getBuyIn()
+numComments=5
