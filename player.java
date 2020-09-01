@@ -7,14 +7,15 @@ import java.util.*;
  */
 public class player
 {
-    int pNr;
+    int nr;
     deck allCards;
     List<card> hand = new ArrayList<card>();
     private int buyIn;
     
-    public player(deck stapel, int pBuyIn){
+    public player(deck stapel, int pBuyIn, int pNr){
         allCards = stapel;
         buyIn = pBuyIn;
+        nr = pNr;
     }
     
     public List getHand(){
@@ -29,6 +30,10 @@ public class player
     
     public int getBuyIn(){
         return buyIn;
+    }
+    
+    public int getNr(){
+     return nr;   
     }
     
     

@@ -12,6 +12,7 @@ public class game
    public int minBuyIn;
    public int smallBlind;
    public int bigBlind;
+   public int potValue;
    
    public game(player p1, player p2, player p3, player p4, deck stapel, int pMBI, int pSB, int pBB){
        allPlayer[0] = p1;
@@ -43,6 +44,9 @@ public class game
    }
    
    public void forceBuyIn(){
+       int a = (int)(Math.random()*3);
        
+       System.out.println("The small blind is "+smallBlind+"$, the big blind is "+bigBlind+"$.");
+       System.out.println("Player "+allPlayer[a].getNr()+"is the small Blind. Please put "+smallBlind+"$ in the pot");
    }
 }
