@@ -43,10 +43,16 @@ public class game
        }
    }
    
-   public void forceBuyIn(){
+   public void forceSmallBlind(){
        int a = (int)(Math.random()*3);
        
        System.out.println("The small blind is "+smallBlind+"$, the big blind is "+bigBlind+"$.");
        System.out.println("Player "+allPlayer[a].getNr()+"is the small Blind. Please put "+smallBlind+"$ in the pot");
+       
+       
+   }
+   
+   public int getPot(){
+       return potValue;
    }
 }

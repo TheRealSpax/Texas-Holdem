@@ -41,4 +41,8 @@ public class player
     public int getBalance(){
         return balance;
     }
+    
+    public void pay(int amount){
+        
+    }
 }

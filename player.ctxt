@@ -13,4 +13,6 @@ comment5.params=
 comment5.target=int\ getNr()
 comment6.params=
 comment6.target=int\ getBalance()
-numComments=7
+comment7.params=amount
+comment7.target=void\ pay(int)
+numComments=8
