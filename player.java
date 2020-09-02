@@ -11,10 +11,12 @@ public class player
     deck allCards;
     List<card> hand = new ArrayList<card>();
     private int buyIn;
+    private int balance;
     
     public player(deck stapel, int pBuyIn, int pNr){
         allCards = stapel;
         buyIn = pBuyIn;
+        balance = pBuyIn;
         nr = pNr;
     }
     
@@ -36,5 +38,7 @@ public class player
      return nr;   
     }
     
-    
+    public int getBalance(){
+        return balance;
+    }
 }

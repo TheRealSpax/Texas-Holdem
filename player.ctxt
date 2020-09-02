@@ -11,4 +11,6 @@ comment4.params=
 comment4.target=int\ getBuyIn()
 comment5.params=
 comment5.target=int\ getNr()
-numComments=6
+comment6.params=
+comment6.target=int\ getBalance()
+numComments=7
