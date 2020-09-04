@@ -1,10 +1,3 @@
-
-/**
- * Write a description of class rules here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class game
 {
    public player allPlayer[] = new player[4];
@@ -68,7 +61,7 @@ public class game
            b = 0;
        }
        System.out.println("Player "+allPlayer[b].getNr()+"is the big Blind. Please put "+bigBlind+"$ in the pot");
-       
+       System.out.println(b);
     }else{
        System.out.println("The small Blind is not in the pot. Please force the small Blind and try again");
     }
@@ -89,7 +82,7 @@ public class game
            pulledCards[i] = allCards.pullFirstCard();
        }
        for(int i = 0;i<3;i++){
-           System.out.println(pulledCards[i]);
+           System.out.println(i+". "+pulledCards[i].getFam()+" "+pulledCards[i].getNr());
        }
    }
    
@@ -102,10 +95,7 @@ public class game
            System.out.println("The small blind is in. Continue with the big Blind!");
            sB = true;
        }else if(potValue == smallBlind+bigBlind){
-           if(b == 4){
-           b = 0;
-       }
-           System.out.println("The big blind is in. Player "+allPlayer[b+1].getNr()+" and Player "+allPlayer[b+2].getNr()+" now need to pay "+bigBlind+"$!");
+           System.out.println("The big blind is in. Player "+allPlayer[(b+1)%4].getNr()+" and Player "+allPlayer[(b+2)%4].getNr()+" now need to pay "+bigBlind+"$!");
            bB = true;
        }else if(potValue == smallBlind+bigBlind*3){
            System.out.println("3 players already put in the big Blind. Use method retireSmallBlind to finish the first Check");
