@@ -2,7 +2,7 @@ import java.util.*;
 public class game
 {
    public player allPlayer[] = new player[4];
-   card pulledCards[] = new card[3];
+   List <card> pulledCards = new ArrayList <card>();
    public deck allCards;
    public int minBuyIn;
    public int smallBlind;
@@ -78,21 +78,16 @@ public class game
        }
    }
    
-   private void pullFirstCards(){
-       
-       for(int i = 0;i<3;i++){
-           pulledCards[i] = allCards.pullFirstCard();
+   private void layCards(int amount){
+       for(int i = 0;i<amount;i++){
+           pulledCards.add(allCards.pullFirstCard());
        }
-       for(int i = 0;i<3;i++){
-           System.out.println(i+". "+pulledCards[i].getFam()+" "+pulledCards[i].getNr());
-       }
-       
-       if(firstCheck == true){
-           
+       for(int i = 0;i<pulledCards.size();i++){
+           System.out.println(i+": "+pulledCards.get(i).getFam()+" "+pulledCards.get(i).getNr());
        }
    }
    
-   public void addPot(int blub){
+      public void addPot(int blub){
        potValue+=blub;
    }
    
@@ -107,8 +102,8 @@ public class game
            System.out.println("3 players already put in the big Blind. Use method retireSmallBlind to finish the first Check");
        }else if(potValue == smallBlind*2+bigBlind*3){
            System.out.println("All players payed the first check. The first three cards will now be displayed!");
+           layCards(3);
            firstCheck = true;
-           pullFirstCards();
        }
    }
    
@@ -119,8 +114,9 @@ public class game
            allCards.takeHand(allPlayer[i].getHand());
            allPlayer[i].getHand().clear();
       }
-      allCards.takeHand(Arrays.asList(pulledCards));
-      Arrays.fill(pulledCards, null);
+      
+      allCards.takeHand(pulledCards);
+      pulledCards.clear();
       
       sB = false;
       bB = false;
