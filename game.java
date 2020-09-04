@@ -1,6 +1,8 @@
+import java.util.*;
 public class game
 {
    public player allPlayer[] = new player[4];
+   card pulledCards[] = new card[3];
    public deck allCards;
    public int minBuyIn;
    public int smallBlind;
@@ -77,12 +79,16 @@ public class game
    }
    
    private void pullFirstCards(){
-       card pulledCards[] = new card[3];
+       
        for(int i = 0;i<3;i++){
            pulledCards[i] = allCards.pullFirstCard();
        }
        for(int i = 0;i<3;i++){
            System.out.println(i+". "+pulledCards[i].getFam()+" "+pulledCards[i].getNr());
+       }
+       
+       if(firstCheck == true){
+           
        }
    }
    
@@ -104,5 +110,22 @@ public class game
            firstCheck = true;
            pullFirstCards();
        }
+   }
+   
+   public void stopGame(){
+      potValue = 0;
+      for(int i = 0;i<allPlayer.length;i++){
+           allPlayer[i].setBalance(allPlayer[i].getBuyIn());
+           allCards.takeHand(allPlayer[i].getHand());
+           allPlayer[i].getHand().clear();
+      }
+      allCards.takeHand(Arrays.asList(pulledCards));
+      Arrays.fill(pulledCards, null);
+      
+      sB = false;
+      bB = false;
+      firstCheck = false;
+      
+      allCards.sort();
    }
 }

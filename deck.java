@@ -61,4 +61,8 @@ public class deck
       deck.remove(0);
       return temp;
   }
+  
+  public void takeHand(List playerHand){
+      deck.addAll(playerHand);
+  }
 }

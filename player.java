@@ -51,7 +51,12 @@ public class player
         return balance;
     }
     
+    public void setBalance(int amount){
+        balance = amount;
+    }
+    
     public void pay(int amount){
+        balance -= amount;
         g.addPot(amount);
         g.checkPayment();
     }

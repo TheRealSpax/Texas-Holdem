@@ -13,4 +13,6 @@ comment5.params=n
 comment5.target=card\ getCard(int)
 comment6.params=
 comment6.target=card\ pullFirstCard()
-numComments=7
+comment7.params=playerHand
+comment7.target=void\ takeHand(java.util.List)
+numComments=8
