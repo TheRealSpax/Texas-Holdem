@@ -12,12 +12,21 @@ public class player
     List<card> hand = new ArrayList<card>();
     private int buyIn;
     private int balance;
+    game g;
+    /*public boolean p1payed = false;
+    public boolean p2payed = false;
+    public boolean p3payed = false;
+    public boolean p4payed = false;*/
     
     public player(deck stapel, int pBuyIn, int pNr){
         allCards = stapel;
         buyIn = pBuyIn;
         balance = pBuyIn;
         nr = pNr;
+    }
+    
+    public void giveGame(game givenGame){
+        g = givenGame;
     }
     
     public List getHand(){
@@ -43,6 +52,7 @@ public class player
     }
     
     public void pay(int amount){
-        
+        g.addPot(amount);
+        g.checkPayment();
     }
 }
