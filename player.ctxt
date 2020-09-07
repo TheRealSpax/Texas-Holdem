@@ -4,6 +4,8 @@ comment0.text=\r\n\ Write\ a\ description\ of\ class\ player\ here.\r\n\r\n\ @au
 comment1.params=stapel\ pBuyIn\ pNr
 comment1.target=player(deck,\ int,\ int)
 comment1.text=public\ boolean\ p1payed\ \=\ false;\r\n\ \ \ \ public\ boolean\ p2payed\ \=\ false;\r\n\ \ \ \ public\ boolean\ p3payed\ \=\ false;\r\npublic\ boolean\ p4payed\ \=\ false;
+comment10.params=
+comment10.target=void\ getOut()
 comment2.params=givenGame
 comment2.target=void\ giveGame(game)
 comment3.params=
@@ -20,4 +22,4 @@ comment8.params=amount
 comment8.target=void\ setBalance(int)
 comment9.params=amount
 comment9.target=void\ pay(int)
-numComments=10
+numComments=11

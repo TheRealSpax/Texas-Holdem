@@ -60,4 +60,8 @@ public class player
         g.addPot(amount);
         g.checkPayment();
     }
+    
+    public void getOut(){
+        
+    }
 }

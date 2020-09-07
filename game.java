@@ -69,7 +69,7 @@ public class game
     }
    }
    
-   public void retireSmallBlind(){
+   private void retireSmallBlind(){
        if(bB == true){
            System.out.println("Player "+allPlayer[a].getNr()+" was the small Blind and now he needs to pay "+smallBlind+"$ again");
            
@@ -87,8 +87,16 @@ public class game
        }
    }
    
-      public void addPot(int blub){
+   public void addPot(int blub){
        potValue+=blub;
+   }
+   
+   public void round(int roundNr){
+    if(firstCheck == true){
+       if(roundNr == 1){
+           System.out.println("The first three cards are there. Player "+allPlayer[a]+", if you want to continue, please put "+bigBlind+" in the pot. If not, use method getOut to quit.");
+       }
+    }
    }
    
    public void checkPayment(){
@@ -99,12 +107,15 @@ public class game
            System.out.println("The big blind is in. Player "+allPlayer[(b+1)%4].getNr()+" and Player "+allPlayer[(b+2)%4].getNr()+" now need to pay "+bigBlind+"$!");
            bB = true;
        }else if(potValue == smallBlind+bigBlind*3){
-           System.out.println("3 players already put in the big Blind. Use method retireSmallBlind to finish the first Check");
+           System.out.println("3 players already put in the big Blind.");
+           retireSmallBlind();
        }else if(potValue == smallBlind*2+bigBlind*3){
            System.out.println("All players payed the first check. The first three cards will now be displayed!");
            layCards(3);
            firstCheck = true;
-       }
+       }/*else if(){
+           
+       }*/
    }
    
    public void stopGame(){
